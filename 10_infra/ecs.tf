@@ -84,23 +84,23 @@ resource "aws_ecs_task_definition" "webapp" {
       secrets = [
         {
           name      = "MYSQL_HOST"
-          valueFrom = "${aws_ssm_parameter.host.arn}"
+          valueFrom = aws_ssm_parameter.host.arn
         },
         {
           name      = "MYSQL_PORT"
-          valueFrom = "${aws_ssm_parameter.port.arn}"
+          valueFrom = aws_ssm_parameter.port.arn
         },
         {
           name      = "MYSQL_DATABASE"
-          valueFrom = "${aws_ssm_parameter.database.arn}"
+          valueFrom = aws_ssm_parameter.database.arn
         },
         {
           name      = "MYSQL_USERNAME"
-          valueFrom = "${aws_ssm_parameter.username.arn}"
+          valueFrom = aws_ssm_parameter.username.arn
         },
         {
           name      = "MYSQL_PASSWORD"
-          valueFrom = "${aws_ssm_parameter.password.arn}"
+          valueFrom = aws_ssm_parameter.password.arn
         }
       ]
     }
