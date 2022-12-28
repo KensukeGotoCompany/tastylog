@@ -51,7 +51,7 @@ jobs:
         run: |
           terraform validate -no-color
       - name: Terraform plan
-        id: step-plan
+        id: plan
         run: |
           terraform plan \
             -var 'project=${{ env.TF_PROJECT }}' \
@@ -61,4 +61,6 @@ jobs:
             -input=false \
             -no-color \
             -detailed-exitcode
-      - run: echo ${{ steps.step-plan.outcome }}
+      - name: Slack Notify
+        if: steps.plan.outputs.exitcode == 2
+        run: echo "Oh No !"
