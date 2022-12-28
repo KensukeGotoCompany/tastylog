@@ -1,4 +1,0 @@
-project     = "YOUR-PROJECT-NAME"
-environment = "YOUR-ENV-NAME"
-username    = "YOUR-ADMIN-USERNAME"
-password    = "YOUR-ADMIN-PASSWORD"
